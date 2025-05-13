@@ -1,0 +1,135 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+:root {
+  --solana-green: #00FFA3;
+  --solana-purple: #9945FF;
+  --solana-blue: #00C2FF;
+  --solana-dark: #0c0b16;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Glowing effects */
+.glow-text {
+  text-shadow: 0 0 10px var(--solana-green), 0 0 20px var(--solana-green);
+}
+
+.glow-box {
+  box-shadow: 0 0 15px rgba(20, 241, 149, 0.2);
+}
+
+/* Gradient text */
+.gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, var(--solana-purple), var(--solana-green));
+}
+
+/* Animated background */
+.animated-bg {
+  background: linear-gradient(
+    -45deg,
+    var(--solana-dark),
+    #1a1a1a,
+    var(--solana-dark),
+    #0a0a0a
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Button hover effects */
+.hover-glow:hover {
+  box-shadow: 0 0 15px var(--solana-green);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* Glass morphism */
+.glass {
+  background: rgba(18, 18, 18, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Pulse animation for timer */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Pulse animation for amount input */
+@keyframes pulse-highlight {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 194, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 194, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 194, 255, 0);
+  }
+}
+
+.pulse-animation {
+  animation: pulse-highlight 0.5s ease-out;
+}
+
+/* Chart canvas styles */
+.chart-canvas {
+  border-radius: 12px;
+  overflow: hidden;
+}
